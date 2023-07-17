@@ -95,7 +95,7 @@ header .navbar-collapse  ul.navbar-nav {
 
 header .navbar-default{
     background-color: #FFFFFF;
-=======
+
 @import url("http://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:400,600,700");
 @import url("font-awesome.css");
 @import url("animate.css");
@@ -496,7 +496,7 @@ display: inline-block;
 	position:relative;
 	margin:0;
 	padding:0;
-=======
+
   background-color: #fff;
 }
 
@@ -540,7 +540,7 @@ right:0px;
 }
 .flex-caption {zoom:0;
   color: #1C1D21;
-=======
+
   padding: 0;
   background: #fff;
   position: relative;
@@ -703,9 +703,6 @@ section.callaction {
 	padding:50px 0 0 0;
 }
 
-
-
-=======
 }
 .flex-caption h3 {
   color: #fff;
@@ -900,8 +897,6 @@ section.callaction {
 	text-decoration: none;
 }
 
-
-=======
   position: relative;
   background: #fff;
   padding: 50px 0 0px 0;
@@ -2079,7 +2074,7 @@ background: #F9F9F9;
   -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.03);
   -moz-box-shadow: 0 2px 0 rgba(0,0,0,0.03);
   box-shadow: 0 2px 0 rgba(0,0,0,0.03);
-=======
+
   font-weight: 700;
 }
 
