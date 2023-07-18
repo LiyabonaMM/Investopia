@@ -3367,3 +3367,10 @@ padding:50px 0
   padding: 22px 0 14px;
   font-size: 18px;
 }
+
+.pricing-box-item {
+  min-height: 80vh !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
