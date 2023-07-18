@@ -1,136 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Investopia</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <meta name="author" content="http://webthemez.com" />
-    <!-- css -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet" />
-    <link href="css/jcarousel.css" rel="stylesheet" />
-    <link href="css/flexslider.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <style>
-      /* CSS styles here */
 
-      .container {
-          max-width: 1900px;
-          margin: 0 auto;
-          padding: 20px;
-          text-align: center;
+<head>
+  <meta charset="UTF-8" />
+  <title>Investopia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="author" content="http://webthemez.com" />
+  <!-- css -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet" />
+  <link href="css/jcarousel.css" rel="stylesheet" />
+  <link href="css/flexslider.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <style>
+    /* CSS styles here */
+    /* GOOGLE FONTS */
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+
+    /* VARIABLES CSS */
+    :root {
+      --white-color: hsl(0, 0%, 100%);
+      --black-color: hsl(0, 0%, 0%);
+
+      --body-font: "Poppins", sans-serif;
+      --h1-font-size: 1.75rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .813rem;
+
+      --font-medium: 500;
+    }
+
+    /* BASE */
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* body,
+    input,
+    button {
+      font-size: var(--normal-font-size);
+      font-family: var(--body-font);
+    } */
+
+    body {
+      color: var(--white-color)
+      
+    }
+
+    input,
+    button {
+      border: none;
+      outline: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+
+
+    /* LOGIN */
+    .login {
+      position: relative;
+      height: 100vh;
+      display: grid;
+      align-items: center;
+      background-image: url('https://i.postimg.cc/QMFxw26n/investing.webp');
+    }
+
+
+
+    .login__form {
+      position: relative;
+      background-color: hsla(0, 0%, 10%, .1);
+      border: 2px solid var(--white-color);
+      margin-inline: 1.5rem;
+      padding: 2.5rem 1.5rem;
+      border-radius: 1rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .login__title {
+      text-align: center;
+      font-size: var(--h1-font-size);
+      font-weight: var(--font-medium);
+      margin-bottom: 2rem;
+    }
+
+    .login__content,
+    .login__box {
+      display: grid;
+    }
+
+    .login__content {
+      row-gap: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .login__box {
+      grid-template-columns: max-content 1fr;
+      align-items: center;
+      column-gap: .75rem;
+      border-bottom: 2px solid var(--white-color);
+
+    }
+
+    .login__icon,
+    .login__eye {
+      font-size: 1.25rem;
+    }
+
+    .login__input {
+      width: 100px;
+      padding-block: .8rem;
+      background: none;
+      color: var(--white-color);
+      position: relative;
+      z-index: 1;
+    }
+
+    .login__box-input {
+      position: relative;
+    }
+
+    .login__label {
+      position: absolute;
+      left: 0;
+      top: 13px;
+      font-weight: var(--font-medium);
+      transition: top .3s, font-size .3s;
+    }
+
+    .login__eye {
+      position: absolute;
+      right: 0;
+      top: 18px;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    .login__box:nth-child(2) input {
+      padding-right: 1.8rem;
+    }
+
+    .login__check,
+    .login__check-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+
+    .login__check {
+      margin-bottom: 1.5rem;
+    }
+
+    .login__check-label,
+    .login__forgot,
+    .login__register {
+      font-size: var(--small-font-size);
+    }
+
+    .login__check-group {
+      column-gap: .5rem;
+    }
+
+    .login__check-input {
+      width: 16px;
+      height: 16px;
+    }
+
+    .login__forgot {
+      color: var(--white-color);
+    }
+
+    .login__forgot:hover {
+      text-decoration: underline;
+    }
+
+    .login__button {
+      width: 100%;
+      padding: 1rem;
+      border-radius: .5rem;
+      background-color: var(--white-color);
+      font-weight: var(--font-medium);
+      cursor: pointer;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      background-color: cornflowerblue;
+    }
+
+    .login__register {
+      text-align: center;
+    }
+
+    .login__register a {
+      color: var(--white-color);
+      font-weight: var(--font-medium);
+    }
+
+    .login__register a:hover {
+      text-decoration: underline;
+    }
+
+    /* Input focus move up label */
+    .login__input:focus+.login__label {
+      top: -12px;
+      font-size: var(--small-font-size);
+    }
+
+    /* Input focus sticky top label */
+    .login__input:not(:placeholder-shown).login__input:not(:focus)+.login__label {
+      top: -12px;
+      font-size: var(--small-font-size);
+    }
+
+
+    /* BREAKPOINTS */
+
+    @media screen and (min-width:576px) {
+      .login {
+        justify-content: center;
       }
 
-      h1 {
-          margin-top: 0;
+      .login__form {
+        width: 432px;
+        padding: 4rem 3rem 3.5rem;
+        border-radius: 1.5rem;
       }
 
-      input {
-          width: 100%;
-          padding: 10px;
-          margin-bottom: 10px;
+      .login__title {
+        font-size: 2rem;
       }
+    }
+  </style>
+</head>
 
-      button {
-          width: 100%;
-          padding: 10px;
-          background-color: blue;
-          color: #fff;
-          border: none;
-          cursor: pointer;
-      }
+<body>
+  <!-- start header -->
+  <header>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img
+              src="https://i.postimg.cc/25dc2W04/Picsart-23-07-17-11-29-36-928-removebg-preview.png" alt="logo"
+              style="height:70px; margin-left:-80px; margin-top:-40px;" /></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav" style=" margin-top:-50px;">
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="./signup.html">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- end header -->
+  <div class="login">
 
-      p {
-          margin-top: 20px;
-      }
+    <form class="login__form">
+      <h1 class="login__title">Login</h1>
 
-      p a {
-          color: blue;
-          text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- start header -->
-    <header>
-      <div class="navbar navbar-default navbar-static-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button
-              type="button"
-              class="navbar-toggle"
-              data-toggle="collapse"
-              data-target=".navbar-collapse"
-            >
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"
-              ><img
-                src="https://i.postimg.cc/25dc2W04/Picsart-23-07-17-11-29-36-928-removebg-preview.png"
-                alt="logo"
-                style="height:70px; margin-left:-80px; margin-top:-40px;"
-            /></a>
+      <!-- Input fields for email and password -->
+      <div class="login__content">
+        <div class="login__box">
+          <i class="ri-user-line login__icon"></i>
+
+          <div class="login__box-input">
+            <input type="email" required class="login__input" placeholder=" ">
+            <label for="" class="login__label">Email</label>
           </div>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" style=" margin-top:-50px;">
-              <li><a href="index.html">Home</a></li>
-              <li class="active"><a href="about.html">About Us</a></li>
-              <li><a href="courses.html">Courses</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="./signup.html">Sign Up</a></li>
+        </div>
+        <div class="login__box">
+          <i class="ri-lock-2-line login__icon"></i>
+
+          <div class="login__box-input">
+            <input type="password" required class="login__input" id="login-pass" placeholder=" ">
+            <label for="" class="login__label">Password</label>
+            <i class="ri-eye-off-line login__eye" id="login-eye"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checkbox and "Forgot Password?" link -->
+      <div class="login__check">
+        <div class="login__check-group">
+          <input type="checkbox" class="login__check-input">
+          <label for="" class="login__check-label">Remember me</label>
+        </div>
+
+        <a href="#" class="login__forgot">Forgot Password?</a>
+      </div>
+
+      <!-- Login button and registration link -->
+      <button class="login__button" style="background-color: green;">Login</button>
+
+      <p class="login__register">
+        Don't have an account? <a href="#">Register</a>
+      </p>
+    </form>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="widget">
+            <h5 class="widgetheading">Our Contact</h5>
+            <address>
+              <strong>investopia Inc</strong><br>
+              Mitchells Plain, Cape Town<br>
+              7785.
+            </address>
+            <p>
+              <i class="icon-phone"></i> (123) 456-789 - 1255-12584 <br>
+              <i class="icon-envelope-alt"></i> investopia@gmail.com
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h5 class="widgetheading">Quick Links</h5>
+            <ul class="link-list">
+              <li><a href="#">Latest Events</a></li>
+              <li><a href="#">Terms and conditions</a></li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Career</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h5 class="widgetheading">Latest posts</h5>
+            <ul class="link-list">
+              <li><a href="#">trading news</a></li>
+              <li><a href="#">rich investors</a></li>
+              <li><a href="#">how to invest youtube</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="widget">
+            <h5 class="widgetheading">Recent News</h5>
+            <ul class="link-list">
+              <li><a href="#">stock exchange.</a></li>
+              <li><a href="#">retirement</a></li>
+              <li><a href="#">how to start a business</a></li>
             </ul>
           </div>
         </div>
       </div>
-    </header>
-    <!-- end header -->
-
-    <div class="container">
-      <h1>Sign Up</h1>
-      <form id="signup-form">
-        <input type="text" placeholder="Username" id="username" required />
-        <input type="email" placeholder="Email" id="email" required />
-        <input type="password" placeholder="Password" id="password" required />
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          id="confirm-password"
-          required
-        />
-        <button type="submit">Sign Up</button>
-      </form>
-      <p>Already have an account? <a href="login.html">Log In</a></p>
     </div>
+    <div id="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="copyright">
+              <p>
+                <span>&copy; Investopia All rights reserved </span><a href="" target="_blank"></a>
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <ul class="social-network">
+              <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+              </li>
+              <li><a href="#" data-placement="top" title="Pinterest"><i
+                    class="fa fa-pinterest"></i></a></li>
+              <li><a href="#" data-placement="top" title="Google plus"><i
+                    class="fa fa-google-plus"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-      // JavaScript code here
-      document.getElementById('signup-form').addEventListener('submit', function(event) {
-          event.preventDefault();
 
-          // Get form input values
-          var username = document.getElementById('username').value;
-          var email = document.getElementById('email').value;
-          var password = document.getElementById('password').value;
-          var confirmPassword = document.getElementById('confirm-password').value;
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
 
-          // Perform sign-up logic
-          if (password !== confirmPassword) {
-              alert('Passwords do not match!');
-          } else {
-              // Continue with sign-up process
-              // Send form data to the server or perform any other necessary actions
-              alert('Sign up successful!');
+    const showHiddenPass = (loginPass, loginEye) => {
+      const input = document.getElementById(loginPass),
+        iconEye = document.getElementById(loginEye)
 
-              // Redirect to the login page
-              window.location.href = 'login.html';
-          }
-      });
-    </script>
-  </body>
-</html>
+      iconEye.addEventListener('click', () => {
+        // Change password to text
+        if (input.type === 'password') {
+          // Switch to text
+          input.type = 'text'
+
+          // Icon change
+          iconEye.classList.add('ri-eye-line')
+          iconEye.classList.remove('ri-eye-off-line')
+        } else {
+          // Change to password
+          input.type = 'password'
+
+          // Icon change
+          iconEye.classList.remove('ri-eye-line')
+          iconEye.classList.add('ri-eye-off-line')
+        }
+      })
+    }
+
+    showHiddenPass('login-pass', 'login-eye')
+
+  </script>
