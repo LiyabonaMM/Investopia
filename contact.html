@@ -91,33 +91,32 @@
               </div>
               <script type="text/javascript">
                 function init_map() {
-                  var myOptions = {
-                    zoom: 14,
-                    center: new google.maps.LatLng(
-                      -34.0584,
-                      18.6099
-                    ), // South Africa, Cape Town, Western Cape, Mitchell's Plain
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                  };
-                  map = new google.maps.Map(
-                    document.getElementById("gmap_canvas"),
-                    myOptions
-                  );
-                  marker = new google.maps.Marker({
-                    map: map,
-                    position: new google.maps.LatLng(
-                      -34.0584,
-                      18.6099
-                    ) // South Africa, Cape Town, Western Cape, Mitchell's Plain
-                  });
-                  infowindow = new google.maps.InfoWindow({
-                    content:
-                      "<b>Investopia</b><br/>Mitchell's Plain, Cape Town, Western Cape<br/> South Africa"
-                  });
-                  google.maps.event.addListener(marker, "click", function () {
-                    infowindow.open(map, marker);
-                  });
-                  infowindow.open(map, marker);
+                	var myOptions = {
+                		zoom: 14,
+                		center: new google.maps.LatLng(
+                			-34.0584,
+                			18.6099
+                		), // South Africa, Cape Town, Western Cape, Mitchell's Plain
+                		mapTypeId: google.maps.MapTypeId.ROADMAP
+                	};
+                	map = new google.maps.Map(
+                		document.getElementById("gmap_canvas"),
+                		myOptions
+                	);
+                	marker = new google.maps.Marker({
+                		map: map,
+                		position: new google.maps.LatLng(
+                			-34.0584,
+                			18.6099
+                		) // South Africa, Cape Town, Western Cape, Mitchell's Plain
+                	});
+                	infowindow = new google.maps.InfoWindow({
+                		content: "<b>Investopia</b><br/>Mitchell's Plain, Cape Town, Western Cape<br/> South Africa"
+                	});
+                	google.maps.event.addListener(marker, "click", function () {
+                		infowindow.open(map, marker);
+                	});
+                	infowindow.open(map, marker);
                 }
                 google.maps.event.addDomListener(window, "load", init_map);
               </script>
@@ -185,39 +184,32 @@
             </div>
             <div class="col-md-6">
               <div class="span4">
-                <div class="title-box clearfix ">
+                <div class="title-box clearfix">
                   <h3 class="title-box_primary">Contact info</h3>
                 </div>
                 <h5>
-                  Lorem ipsum dolor sit amet, cadipisicing sit amet, consectetur
-                  adipisicing elit. Atque sed, quidem quis praesentium.
+                  We would love to hear from you! Contact us for any inquiries
+                  or assistance you need. Our team is here to help.
                 </h5>
                 <p>
-                  Lorem ipsum dolor sit amet, cadipisicing sit amet, consectetur
-                  adipisicing elit. Lorem ipsum dolor sit amet, cadipisicing sit
-                  amet, consectetur adipisicing elit. Atque sed, quidem quis
-                  praesentium Atque sed, quidem quis praesentium, ut unde fuga
-                  error commodi architecto, laudantium culpa tenetur at id,
-                  beatae pet.<br />
+                  Feel free to reach out to us with any questions or concerns.
+                  We strive to provide excellent customer service and timely
+                  responses. Lorem ipsum dolor sit amet, consectetur adipisicing
+                  elit. Atque sed, quidem quis praesentium. Lorem ipsum dolor
+                  sit amet, consectetur adipisicing elit. Atque sed, quidem quis
+                  praesentium, ut unde fuga error commodi architecto, laudantium
+                  culpa tenetur at id, beatae pet.
                 </p>
                 <address>
-                  <strong
-                    >Investopia Inc.<br />
-                    Mitchell's Plain, Cape Town<br />
-                    Western Cape, South Africa</strong
-                  ><br />
-                  Telephone: +1 234 567 890<br />
-                  FAX: +1 234 567 890<br />
-                  E-mail:
-                  <a href="mailto:investopia@gmail.com">investopia@gmail.com</a
-                  ><br />
+                  <strong>Investopia Inc.</strong><br />
+                  Mitchell's Plain, Cape Town<br />
+                  Western Cape, South Africa
                 </address>
               </div>
             </div>
           </div>
         </div>
       </section>
-      ]
       <footer>
         <div class="container">
           <div class="row">
