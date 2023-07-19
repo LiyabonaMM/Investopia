@@ -28,7 +28,7 @@
       .jumbotron {
         background-image: url('path_to_image/background.jpg');
         background-size: cover;
-        color: #fff;
+        color: black;
         padding: 100px 0;
         text-align: center;
       }
@@ -83,6 +83,22 @@
 
       .exchange-rate p {
         font-size: 18px;
+      }
+
+      .chart-container {
+        margin-top: 30px;
+        text-align: center;
+        width: 100%;
+        max-width: 800px;
+        height: 400px;
+        margin: 0 auto;
+      }
+
+      .btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
       }
     </style>
   </head>
@@ -185,21 +201,69 @@
         </p>
 
         <a
-          href="https://www.example.com/webinar-registration"
+          href="https://www.moneyweb.co.za/category/in-depth/webinars/"
           class="btn btn-primary"
-          >Register Now</a
+          >Explore</a
         >
 
         <div class="exchange-rate">
           <h3>Live Exchange Rate</h3>
-          <p>1 USD = 0.85 EUR</p>
+          <p>1 ZAR = 0.071 USD</p>
         </div>
 
-        <a href="courses.html" class="btn btn-primary">View All Courses</a>
+        <div class="chart-container">
+          <canvas id="chart"></canvas>
+        </div>
+
+        <div class="btn-container">
+          <a href="courses.html" class="btn btn-primary">View All Courses</a>
+        </div>
       </div>
 
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script src="js/jquery.js"></script>
       <script src="js/bootstrap.min.js"></script>
+      <script>
+        // Chart.js configuration
+        var ctx = document.getElementById('chart').getContext('2d');
+        var chart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+            datasets: [
+              {
+                label: 'Exchange Rate',
+                backgroundColor: 'rgba(97, 179, 49, 0.2)',
+                borderColor: 'rgba(97, 179, 49, 1)',
+                data: [0.85, 0.82, 0.89, 0.87, 0.83, 0.88],
+                borderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                display: true,
+                title: {
+                  display: true,
+                  text: 'Month',
+                },
+              },
+              y: {
+                display: true,
+                title: {
+                  display: true,
+                  text: 'Exchange Rate',
+                },
+                suggestedMin: 0.8,
+                suggestedMax: 0.9,
+              },
+            },
+          },
+        });
+      </script>
     </div>
   </body>
 </html>
